@@ -15,3 +15,12 @@ if you need to access LNF LAN via OpenVPN install the infn-user profile
 ### Computing resources and OPEN VPN @ LNGS
 * install the profile https://www.lngs.infn.it/en/vpn
 * send an email to: giovanni.mazzitelli@lnf.infn.it to be autorized
+
+### for foriger user ###
+* to be reggistred on AAI you need a CODICE FISCALE (CF)
+
+      https://quifinanza.it/strumenti/codice-fiscale 
+      (Provincia: “Stato Estero")
+      (LUOGO di NASCITA: BRASILE)
+
+* then you need local username http://www.lnf.infn.it/computing/cgi-bin/newaccountrequest.pl 
