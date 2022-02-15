@@ -17,7 +17,7 @@ if you need to access LNF LAN via OpenVPN install the infn-user profile
 * send an email to: giovanni.mazzitelli@lnf.infn.it to be autorized
 
 ### for foriger user ###
-* to be reggistred on AAI you need a CODICE FISCALE (CF)
+* to be reggistred on AAI you need a CODICE FISCALE (CF) that you can generate with the tool:
 
       https://quifinanza.it/strumenti/codice-fiscale 
       (Provincia: “Stato Estero")
