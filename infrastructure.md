@@ -23,4 +23,4 @@ if you need to access LNF LAN via OpenVPN install the infn-user profile
       (Provincia: “Stato Estero")
       (LUOGO di NASCITA: BRASILE)
 
-* then you need local username http://www.lnf.infn.it/computing/cgi-bin/newaccountrequest.pl 
+* then you need local username @ LNF http://www.lnf.infn.it/computing/cgi-bin/newaccountrequest.pl or LNGS sending an email to giovanni.mazzitelli@lnf.infn.it
