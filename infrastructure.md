@@ -15,7 +15,7 @@ if you need to access LNF LAN via OpenVPN install the infn-user profile
 ### Computing resources and OPEN VPN @ LNGS
 * install the profile https://www.lngs.infn.it/en/vpn
 * send an email to: giovanni.mazzitelli@lnf.infn.it to be autorized
-* [VPN profile in](http://www.lnf.infn.it/computing/networking/openvpn-it.php)
+* [VPN profile *infnusers*](http://www.lnf.infn.it/computing/networking/openvpn-it.php)
 
 ### (*) for foreign users ###
 * to be reggistred on AAI you need a CODICE FISCALE (CF) that you can generate with the tool:
