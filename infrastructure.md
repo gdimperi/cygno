@@ -9,13 +9,13 @@ as responsable put everyware **Giovanni Mazzitelli**: giovanni.mazzitelli@lnf.in
 
 ### Computing resources and OPEN VPN @ LNF
 if you need to access LNF LAN via OpenVPN install the infn-user profile
-* http://www.lnf.infn.it/computing/networking/openvpn-en.php
 * send an email to: giovanni.mazzitelli@lnf.infn.it to be autorized
+* http://www.lnf.infn.it/computing/networking/openvpn-en.php
 * if you need also computing resesources plese fill http://www.lnf.infn.it/computing/cgi-bin/newaccountrequest.pl 
 
 ### Computing resources and OPEN VPN @ LNGS
-* install the profile https://www.lngs.infn.it/en/vpn
 * send an email to: giovanni.mazzitelli@lnf.infn.it to be autorized
+* install the profile https://www.lngs.infn.it/en/vpn
 * if you need also computing resesources plese ask for it by mail to giovanni.mazzitelli@lnf.infn.it
 
 ### (*) for foreign users ###
