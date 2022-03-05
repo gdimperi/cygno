@@ -1,10 +1,8 @@
 # Computing infrastrcture
 
 ### Signup on computing ressources
-* if you are not associeted/hosted/dipenddet of INFN plese:
-      * CYGNO users are invited to signup on: https://signup.app.infn.it/ (*)
-      * then accept the securety policy at: https://userportal.app.infn.it/ 
-* to access CYGNO bach system, jupyter notebook and storage plese register also on the INFN CLOUD https://guides.cloud.infn.it/docs/users-guides/en/latest/users_guides/getting_started.html
+* if you are not associeted/hosted/employed of INFN plese signup on: https://signup.app.infn.it/ (1) and then accept the securety policy at https://userportal.app.infn.it/ 
+* to access CYGNO bach system, jupyter notebook and storage plese register as USER also on the INFN CLOUD https://guides.cloud.infn.it/docs/users-guides/en/latest/users_guides/getting_started.html
 
 as responsable put everyware **Giovanni Mazzitelli**: giovanni.mazzitelli@lnf.infn.it
 
@@ -19,7 +17,7 @@ if you need to access LNF LAN via OpenVPN install the infn-user profile
 * install the profile https://www.lngs.infn.it/en/vpn
 * if you need also local computing resesources plese ask for it by mail to giovanni.mazzitelli@lnf.infn.it
 
-### (*) for foreign users ###
+### (1) for foreign users ###
 * to be reggistred on AAI you need a CODICE FISCALE (CF) that you can generate with the tool:
 
       https://quifinanza.it/strumenti/codice-fiscale 
