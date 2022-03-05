@@ -1,9 +1,10 @@
 # Computing infrastrcture
 
 ### Signup on computing ressources
-* CYGNO users are invited to signup on: https://signup.app.infn.it/ (*)
-* then accept the securety policy at: https://userportal.app.infn.it/ 
-* if you need to access CYGNO bach system, jupyter notebook and storage plese register also on the INFN CLOUD https://guides.cloud.infn.it/docs/users-guides/en/latest/users_guides/getting_started.html
+* if you are not associeted/hosted/dipenddet of INFN plese:
+      * CYGNO users are invited to signup on: https://signup.app.infn.it/ (*)
+      * then accept the securety policy at: https://userportal.app.infn.it/ 
+* to access CYGNO bach system, jupyter notebook and storage plese register also on the INFN CLOUD https://guides.cloud.infn.it/docs/users-guides/en/latest/users_guides/getting_started.html
 
 as responsable put everyware **Giovanni Mazzitelli**: giovanni.mazzitelli@lnf.infn.it
 
