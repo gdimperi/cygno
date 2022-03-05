@@ -11,10 +11,12 @@ as responsable put everyware **Giovanni Mazzitelli**: giovanni.mazzitelli@lnf.in
 if you need to access LNF LAN via OpenVPN install the infn-user profile
 * http://www.lnf.infn.it/computing/networking/openvpn-en.php
 * send an email to: giovanni.mazzitelli@lnf.infn.it to be autorized
+* if you need also computing resesources plese fill http://www.lnf.infn.it/computing/cgi-bin/newaccountrequest.pl 
 
 ### Computing resources and OPEN VPN @ LNGS
 * install the profile https://www.lngs.infn.it/en/vpn
 * send an email to: giovanni.mazzitelli@lnf.infn.it to be autorized
+* if you need also computing resesources plese ask for it by mail to giovanni.mazzitelli@lnf.infn.it
 
 ### (*) for foreign users ###
 * to be reggistred on AAI you need a CODICE FISCALE (CF) that you can generate with the tool:
@@ -23,4 +25,4 @@ if you need to access LNF LAN via OpenVPN install the infn-user profile
       (Provincia: “Stato Estero")
       (LUOGO di NASCITA: BRASILE)
 
-* then you need local username @ LNF http://www.lnf.infn.it/computing/cgi-bin/newaccountrequest.pl or LNGS sending an email to giovanni.mazzitelli@lnf.infn.it
+* up to now also a local username in INFN local sites computing resources is required (see prevous point)
