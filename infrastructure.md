@@ -17,6 +17,20 @@ if you need to access LNF LAN via OpenVPN install the infn-user profile
 * install the profile https://www.lngs.infn.it/en/vpn
 * if you need also local computing resesources plese ask for it by mail to giovanni.mazzitelli@lnf.infn.it
 
+### CYGNO CLOUD Storage
+you can upload/dowdload mange data on the CYGNO cloud repositoty by: 
+
+* Web Tool: https://minio.cloud.infn.it/minio/login
+* Cloud CYGNO interface tool: https://notebook.cygno.cloud.infn.it:8888/ 
+* CLI tool: https://github.com/CYGNUS-RD/cygno#cygno-cli-tool-cygno_repo
+
+the cloud-storage/ contan tree backet:
+* cloud-data: daq stored data, read only
+* cloud-sim: simulation input and output data, read and write
+* cloud-analysis: analisys input and output data, read and write
+* (cygno - olda data repository, USERNAME private repository on cloud, scratch repository on cloud)
+
+
 ### (1) for foreign users ###
 * to be reggistred on AAI you need a CODICE FISCALE (CF) that you can generate with the tool:
 
