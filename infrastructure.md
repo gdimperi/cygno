@@ -18,7 +18,7 @@ if you need to access LNF LAN via OpenVPN install the infn-user profile
 * if you need also local computing resesources plese ask for it by mail to giovanni.mazzitelli@lnf.infn.it
 
 ### CYGNO CLOUD Storage
-you can upload/dowdload mange data on the CYGNO cloud repositoty by: 
+you can upload/dowdload and mange data on the CYGNO cloud repositoty by: 
 
 * Web Tool: https://minio.cloud.infn.it/minio/login
 * Cloud CYGNO interface tool: https://notebook.cygno.cloud.infn.it:8888/ 
