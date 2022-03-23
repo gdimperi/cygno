@@ -26,7 +26,8 @@ requirements:
 
 * install python library  (https://github.com/DODAS-TS/boto3sts): 
 
-      pip3 install git+https://github.com/DODAS-TS/boto3sts
+      pip install git+https://github.com/DODAS-TS/boto3sts
+      pip install git+https://github.com/CYGNUS-RD/cygno.git
       
 * see https://boto3.amazonaws.com/v1/documentation/api/latest/index.html for S3 documentation
 
