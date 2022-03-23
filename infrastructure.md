@@ -30,7 +30,6 @@ the cloud-storage/ contan tree backet:
 * cloud-analysis: analisys input and output data, read and write
 * (cygno - olda data repository, USERNAME private repository on cloud, scratch repository on cloud)
 
-
 ### (1) for foreign users ###
 * to be reggistred on AAI you need a CODICE FISCALE (CF) that you can generate with the tool:
 
