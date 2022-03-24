@@ -7,8 +7,8 @@ install the CYGNO library:
 
 requirements:
 * Pyroot: https://root.cern/manual/python/ 
-* oidc-agent
-* boto3sts
+* oidc-agent: https://indigo-dc.gitbook.io/oidc-agent/installation
+* boto3sts: https://github.com/DODAS-TS/boto3sts
 
 ## CYGNO CLI Tool *cygno_repo*
 
