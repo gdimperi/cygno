@@ -3,7 +3,7 @@
 
 install the CYGNO library:
 
-      pip install git+https://github.com/CYGNUS-RD/cygno.git
+      pip install git+https://github.com/CYGNUS-RD/cygno.git -U
 
 requirements:
 * Pyroot: https://root.cern/manual/python/ 
