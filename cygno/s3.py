@@ -1,7 +1,10 @@
 #
 ################## General TOOL for S3 ##############
 #
-        
+
+BAKET_POSIX_PATH = '/jupyter-workspace/cloud-storage/'
+BAKET_REST_PATH = 'https://s3.cloud.infn.it/v1/AUTH_2ebf769785574195bde2ff418deac08a/'
+
 def kb2valueformat(val):
     import numpy as np
     if int(val/1024./1024/1024.)>0:
@@ -14,19 +17,42 @@ def kb2valueformat(val):
 
 ############################    
 
-def root_file(run, tag='LAB', posix=False, verbose=False):
-    if posix:
-        BASE_URL  = "/workarea/cloud-storage/cygno-data/"
-        if run <= 4504:
-            BASE_URL  = "/workarea/cloud-storage/cygno/Data/"
-    else:
-        BASE_URL  = "https://s3.cloud.infn.it/v1/AUTH_2ebf769785574195bde2ff418deac08a/cygno-data/"
-        if run <= 4504:
-            BASE_URL  = "https://s3.cloud.infn.it/v1/AUTH_2ebf769785574195bde2ff418deac08a/cygnus/Data/"
+# def root_file(run, tag='LAB', posix=False, verbose=False):
+#     if posix:
+#         BASE_URL  = BAKET_POSIX_PATH+'cygno-data/'
+#         if run <= 4504:
+#             BASE_URL  = BAKET_POSIX_PATH+'cygno/Data/'
+#     else:
+#         BASE_URL  = BAKET_REST_PATH+'cygno-data/'
+#         if run <= 4504:
+#             BASE_URL  =  BAKET_REST_PATH+'cygnus/Data/'
     
-    file_root = (tag+'/histograms_Run%05d.root' % run)
-    if verbose: print(BASE_URL+file_root)
-    return BASE_URL+file_root
+#     file_root = (tag+'/histograms_Run%05d.root' % run)
+#     if verbose: print(BASE_URL+file_root)
+#     return BASE_URL+file_root
+
+
+def root_file(run, tag='LAB', cloud=False, verbose=False):
+    if cloud:
+        BASE_URL  = BAKET_REST_PATH+'cygno-data/'
+        if run <= 4504:
+            BASE_URL  =  BAKET_REST_PATH+'cygnus/Data/'
+        f  = BASE_URL+(tag+'/histograms_Run%05d.root' % run)
+    else:
+        f = (tag+'/histograms_Run%05d.root' % run)
+        
+    if verbose: print(f)
+    return f
+
+def mid_file(run, tag='LNGS', cloud=False, verbose=False):
+    if cloud:
+        BASE_URL  = BAKET_REST_PATH+'cygno-data/'
+        f = BASE_URL+(tag+'/run%05d.mid.gz' % run)
+    else:
+        f = ('/run%05d.mid.gz' % run)
+    if verbose: print(f)
+    return f
+
 
 
 def backet_list(tag, bucket='cygno-sim', session="infncloud-iam", verbose=False):

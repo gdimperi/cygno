@@ -27,6 +27,7 @@ import glob, os
 import re
 import sys
 from cygno import s3
+from cygno import cmd
 
 class myError(Exception):
     pass
@@ -34,6 +35,121 @@ class myError(Exception):
 #
 # CYGNO py ROOT Tools
 #
+
+
+class cfile:
+    def __init__(self, file, pic, wfm, max_pic, max_wfm, x_resolution, y_resolution):
+        self.file         = file
+        self.pic          = pic 
+        self.wfm          = wfm
+        self.max_pic      = max_pic
+        self.max_wfm      = max_wfm
+        self.x_resolution = x_resolution
+        self.y_resolution = y_resolution
+
+def open_mid(run, path='/tmp/',  cloud=True,  tag='LNGS', verbose=False):
+    import midas.file_reader
+    fname = s3.mid_file(run, tag=tag, cloud=cloud, verbose=verbose)
+    if verbose: print(fname)
+    if not cloud:
+        if os.path.exists(path+fname):
+            f = midas.file_reader.MidasFile(path+fname)
+        else:
+            raise myError("openFileError: "+fname+" do not exist") 
+    else:
+        filetmp = cmd.cache_file(fname, cachedir=path, verbose=verbose)
+        f = midas.file_reader.MidasFile(filetmp)  
+    return f
+
+def open_root(run, path='/tmp/',  cloud=True,  tag='LAB', verbose=False):
+    import ROOT
+    import root_numpy as rtnp
+    fname = s3.root_file(run, tag=tag, cloud=cloud, verbose=verbose)
+    if not cloud:
+        fname=path+fname
+    class cfile:
+        def __init__(self, file, pic, wfm, max_pic, max_wfm, x_resolution, y_resolution):
+            self.file         = file
+            self.pic          = pic 
+            self.wfm          = wfm
+            self.max_pic      = max_pic
+            self.max_wfm      = max_wfm
+            self.x_resolution = x_resolution
+            self.y_resolution = y_resolution
+    try:
+        f=ROOT.TFile.Open(fname)
+        pic, wfm = rootTH2byname(f)
+        image = rtnp.hist2array(f.Get(pic[0])).T
+        x_resolution = image.shape[1]
+        y_resolution = image.shape[0]
+        max_pic = len(pic)
+        max_wfm = len(wfm)
+    except:
+        raise myError("openFileError: "+fname)
+
+    if verbose:
+        print ('Open file: '+fname)
+        print ('Find Keys: '+str(len(f.GetListOfKeys())))
+        print ("# of Images (TH2) Files: %d " % (max_pic))
+        print ("# of Waveform (TH2) Files: %d " % (max_wfm))
+        print ('Camera X, Y pixel: {:d} {:d} '.format(x_resolution, y_resolution))
+    return cfile(f, pic, wfm, max_pic, max_wfm, x_resolution, y_resolution)
+
+
+def daq_cam2array(bank, verbose=False):
+    shape_x_image = shape_y_image = int(np.sqrt(bank.size_bytes*8/16))
+    image = np.reshape(bank.data, (shape_x_image, shape_y_image))
+    return image, shape_x_image, shape_y_image
+
+def daq_dgz2header(bank, verbose=False):
+    nboard = bank.data[0]
+    ich = 1
+    for iboard in range(nboard):
+        name_board = bank.data[ich]
+        ich+=1
+        number_samples = bank.data[ich]
+        ich+=1
+        number_channels =  bank.data[ich]
+        ich+=1
+        number_events = bank.data[ich]
+        ich+=1
+        vertical_resulution = bank.data[ich]
+        ich+=1
+        sampling_rate = bank.data[ich]
+        if verbose:
+            print ("name_board, number_samples, number_events, vertical_resulution, sampling_rate", 
+                   name_board, number_samples, number_events, vertical_resulution, sampling_rate)
+        cannaels_offset = [None] * number_channels
+        for ichannels in range(number_channels):
+            ich+=1
+            cannaels_offset[ichannels] = bank.data[ich]
+        if verbose:
+            print ("cannaels_offset: ", cannaels_offset)
+        return number_events, number_channels, number_samples
+    
+def daq_dgz2array(bank, header, verbose=False):
+    waveform = []
+    data_offset = 0
+    number_events  = header[0]
+    number_channels= header[1]
+    number_samples = header[2]
+    for ievent in range(number_events):       
+        for ichannels in range(number_channels):
+            if verbose:
+                print ("data_offset, data_offset+number_samples",
+                       data_offset, data_offset+number_samples)
+                print(bank.data[data_offset:data_offset+number_samples])
+
+            waveform.append(bank.data[data_offset:data_offset+number_samples])
+            data_offset += number_samples
+    if verbose:
+        print(waveform, number_events, number_channels)
+    return waveform
+
+def daq_slow2array(bank, verbose=False):
+    if verbose:
+        print(list(bank.data))
+    return bank.data
 
 def write2root(fname, img, id=0, option='update', verbose=False):
     import ROOT
@@ -70,47 +186,17 @@ def rootTH2byname(root_file, verbose=False):
             wfm.append(che)
     return pic, wfm
     
-class cfile:
-    def __init__(self, file, pic, wfm, max_pic, max_wfm, x_resolution, y_resolution):
-        self.file         = file
-        self.pic          = pic 
-        self.wfm          = wfm
-        self.max_pic      = max_pic
-        self.max_wfm      = max_wfm
-        self.x_resolution = x_resolution
-        self.y_resolution = y_resolution
-    
 def open_(run, tag='LAB', posix=False, verbose=False):
-    import ROOT
-    import root_numpy as rtnp
-    class cfile:
-        def __init__(self, file, pic, wfm, max_pic, max_wfm, x_resolution, y_resolution):
-            self.file         = file
-            self.pic          = pic 
-            self.wfm          = wfm
-            self.max_pic      = max_pic
-            self.max_wfm      = max_wfm
-            self.x_resolution = x_resolution
-            self.y_resolution = y_resolution
-    try:
-        f=ROOT.TFile.Open(s3.root_file(run, tag, posix=posix))
-        pic, wfm = rootTH2byname(f)
-        image = rtnp.hist2array(f.Get(pic[0])).T
-        x_resolution = image.shape[1]
-        y_resolution = image.shape[0]
-        max_pic = len(pic)
-        max_wfm = len(wfm)
-    except:
-        raise myError("openFileError: "+s3.root_file(run, tag, posix=posix))
-    
-
-    if verbose:
-        print ('Open file: '+s3.root_file(run, tag, posix=posix))
-        print ('Find Keys: '+str(len(f.GetListOfKeys())))
-        print ("# of Images (TH2) Files: %d " % (max_pic))
-        print ("# of Waveform (TH2) Files: %d " % (max_wfm))
-        print ('Camera X, Y pixel: {:d} {:d} '.format(x_resolution, y_resolution))
-    return cfile(f, pic, wfm, max_pic, max_wfm, x_resolution, y_resolution)
+    BAKET_POSIX_PATH = '/jupyter-workspace/cloud-storage/'
+    if posix:
+        path = BAKET_POSIX_PATH
+    else:
+        path='/tmp/'
+    if tag == 'LNGS' or tag == 'LNF' or tag =='TMP':
+        f = open_mid(run, path=path,  cloud=posix,  tag=tag, verbose=False)
+    else:
+        f = open_root(run, path=path,  cloud=posix,  tag=tag, verbose=False)
+    return f
 
 def pic_(cfile, iTr=0, verbose=False):
     import ROOT

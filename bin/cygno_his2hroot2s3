@@ -1,0 +1,81 @@
+#!/usr/bin/env python3
+#
+# G. Mazzitelli 2022
+#
+
+__version__ = '1.0'
+
+import os,sys
+from cygno import s3, his, cmd
+
+def file2conv(his_file, verbose=False):
+    stem, _ = os.path.splitext(his_file)
+
+    fpath, fname = os.path.split(his_file)
+    
+    if (verbose): print("HIS: ", his_file)
+        
+    fname, _ = os.path.splitext(fname)
+    runN = fname.split('run')[-1] if 'run' in fname else fname.split('Run')[-1]
+    if '_' in runN:
+        run = "{:05d}".format(int(runN.split('_')[-1]))
+    else:
+        run = runN if runN.isdigit() else 'XXXX'
+    
+    if (verbose): print("RUN: ", run)
+    fileout = 'histograms_Run{run}.root'.format(run=run)
+    return fileout, run
+
+def actOnFile(his_file, delHis = False, delHist = False, verbose = False):
+    import os,sys
+    fpath, fname = os.path.split(his_file)
+    print ("conerting file {}".format(his_file))
+    fileout, run = file2conv(his_file, verbose)
+    os.system("cygno_his2root -f {}".format(his_file))
+    filein = fpath+"/"+fname.split('.')[0]+".root"
+    cmd.mv_file(filein, fpath+"/"+fileout)
+    print ("file {} done".format(fpath+fileout))
+    print ("uploding file {} ".format(fpath+"/"+fileout))
+
+    os.system("cygno_repo put cygno-data {} -t LAB".format(fpath+"/"+fileout))
+    print ("file {} upload".format(fpath+"/"+fileout))
+    if delHis: 
+        cmd.rm_file(his_file)
+        print ("file {} removed".format(his_file))
+    if delHist: 
+        hpath = os.path.dirname(his_file)+"/"+fileout
+        cmd.rm_file(hpath)
+        print ("file {} removed".format(hpath))
+        
+    return
+
+def main():
+    from optparse import OptionParser
+
+    parser = OptionParser(usage='usage: %prog\t [-f -d -r] DIRECTORY/FILEPATH\n nella eventualita di dischi read only, creare una directory e fare il simbolic link hai file sui quali far girare il programma')
+    parser.add_option('-f','--file', dest='file', action="store_true", default=False, help='convert sigle HIS file;');
+    parser.add_option('-d','--delete', dest='delete', action="store_true", default=False, help='delete HIS file after convertion;');
+    parser.add_option('-r','--delhist', dest='delhist', action="store_true", default=False, help='delete ROOT file after convertion;');
+    parser.add_option('-v','--verbose', dest='verbose', action="store_true", default=False, help='verbose output;');
+    (options, args) = parser.parse_args()
+    #
+    if options.verbose: 
+        print(">> resquested arguments:", args)
+        print(">> resquested options:", options)
+    if len(args) < 1:
+        parser.error("incorrect number of arguments")
+    else:
+        path = args[0]
+        if options.file:
+            if path.endswith(".HIS"):
+                actOnFile(path, delHis = options.delete, delHist = options.delhist, verbose = options.verbose)
+        else:
+            for file in os.listdir(path):
+                    if file.endswith(".HIS") and (file.startswith("run") or file.startswith("Run")):
+                        his_file = path+file
+                        actOnFile(his_file, delHis = options.delete, delHist = options.delhist, verbose = options.verbose)
+            
+            print("ALL DONE")
+            
+if __name__ == "__main__":
+    main()
