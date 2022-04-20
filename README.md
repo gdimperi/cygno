@@ -3,12 +3,12 @@
 
 install the CYGNO library:
 
-      pip install git+https://github.com/CYGNUS-RD/cygno.git
+      pip install git+https://github.com/CYGNUS-RD/cygno.git -U
 
 requirements:
 * Pyroot: https://root.cern/manual/python/ 
-* oidc-agent
-* boto3sts
+* oidc-agent: https://indigo-dc.gitbook.io/oidc-agent/installation
+* boto3sts: https://github.com/DODAS-TS/boto3sts
 
 ## CYGNO CLI Tool *cygno_repo*
 
@@ -26,7 +26,8 @@ requirements:
 
 * install python library  (https://github.com/DODAS-TS/boto3sts): 
 
-      pip3 install git+https://github.com/DODAS-TS/boto3sts
+      pip install git+https://github.com/DODAS-TS/boto3sts
+      pip install git+https://github.com/CYGNUS-RD/cygno.git
       
 * see https://boto3.amazonaws.com/v1/documentation/api/latest/index.html for S3 documentation
 
