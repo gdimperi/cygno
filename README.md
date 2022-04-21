@@ -9,6 +9,7 @@ requirements:
 * Pyroot: https://root.cern/manual/python/ 
 * oidc-agent: https://indigo-dc.gitbook.io/oidc-agent/installation
 * boto3sts: https://github.com/DODAS-TS/boto3sts
+* MIDAS: https://github.com/CYGNUS-RD/middleware/tree/master/midas
 
 ## CYGNO CLI Tool *cygno_repo*
 
@@ -107,11 +108,24 @@ convert HIS HoKaWo output file in CYGNO root histograms data files
 	  -h, --help     show this help message and exit
 	  -d, --delete   delete HIS file after conversion;
 	  -v, --verbose  verbose output;
+	  
+## CYGNO CLI Tool *cygno_mid2root*
 
+convert Midas  output file in CYGNO root histograms data files
+
+	pip install 'https://github.com/CYGNUS-RD/middleware/blob/master/midas/midaslib.tar.gz?raw=true’
+	
+
+	Usage: cygno_mid2root	 <RUN number>
+
+	Options:
+	  -h, --help            show this help message and exit
+	  -p PATH, --path=PATH  path to file or cache directory
+	  -v, --verbose         verbose output;
 
 ## CYGNO library tool
 
-### data class
+### data class for ROOT files
 
 	class cfile:
 		def __init__(self, file, pic, wfm, max_pic, max_wfm, x_resolution, y_resolution):
@@ -123,7 +137,9 @@ convert HIS HoKaWo output file in CYGNO root histograms data files
 			self.x_resolution = x_resolution
 			self.y_resolution = y_resolution
 
-* open_(run, tag='LAB', posix=False, verbose=True) - open cygno ROOT file from remote or on cloud posix like access and return cfile class type
+* open_mid(run, path='/tmp/',  cloud=True,  tag='LNGS', verbose=False) open/cache MIDAS form cloud in path
+* open_root(run, path='/tmp/',  cloud=True,  tag='LAB', verbose=False)  open/cache ROOT form cloud in path
+* open_(run, tag='LAB', posix=False, verbose=True) - open cygno ROOT/MID file from remote or on cloud posix like access and return cfile class type
 * read_(f, iTr) - return image array from file poiter
 * pic_(cfile, iTr=0) - return immage array of track iTr from cfile
 * wfm_(cfile, iTr=0, iWf=0) - return amplitude and time of iTr track and iWr waveform from cfile
