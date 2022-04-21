@@ -42,8 +42,10 @@ def cache_file(url, cachedir='/tmp/', verbose=False):
     if not os.path.exists(tmpname):
         if verbose: print("downloading: "+tmpname)
         if python_version().split('.')[0]=='3':
-            from urllib.request import urlretrieve
-            urlretrieve(url, tmpname, reporthook)
+#             from urllib.request import urlretrieve
+#             urlretrieve(url, tmpname, reporthook)
+            import urllib
+            urllib.request.urlretrieve(url, tmpname, reporthook)
         else:
             import urllib
             urllib.urlretrieve(url, tmpname, reporthook)
