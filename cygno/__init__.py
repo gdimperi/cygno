@@ -55,7 +55,7 @@ def open_mid(run, path='/tmp/',  cloud=True,  tag='LNGS', verbose=False):
         if os.path.exists(path+fname):
             f = midas.file_reader.MidasFile(path+fname)
         else:
-            raise myError("openFileError: "+fname+" do not exist") 
+            raise myError("openFileError: "+path+fname+" do not exist") 
     else:
         filetmp = cmd.cache_file(fname, cachedir=path, verbose=verbose)
         f = midas.file_reader.MidasFile(filetmp)  
@@ -95,6 +95,18 @@ def open_root(run, path='/tmp/',  cloud=True,  tag='LAB', verbose=False):
         print ('Camera X, Y pixel: {:d} {:d} '.format(x_resolution, y_resolution))
     return cfile(f, pic, wfm, max_pic, max_wfm, x_resolution, y_resolution)
 
+    
+def open_(run, tag='LAB', posix=False, verbose=False):
+    BAKET_POSIX_PATH = '/jupyter-workspace/cloud-storage/cygno-data/'
+    if posix:
+        path = BAKET_POSIX_PATH+tag+'/'
+    else:
+        path='/tmp/'
+    if tag == 'LNGS' or tag == 'LNF' or tag =='TMP':
+        f = open_mid(run, path=path,  cloud=posix,  tag=tag, verbose=False)
+    else:
+        f = open_root(run, path=path,  cloud=posix,  tag=tag, verbose=False)
+    return f
 
 def daq_cam2array(bank, verbose=False):
     shape_x_image = shape_y_image = int(np.sqrt(bank.size_bytes*8/16))
@@ -185,18 +197,7 @@ def rootTH2byname(root_file, verbose=False):
         elif ('wfm_run' in str(che)):
             wfm.append(che)
     return pic, wfm
-    
-def open_(run, tag='LAB', posix=False, verbose=False):
-    BAKET_POSIX_PATH = '/jupyter-workspace/cloud-storage/'
-    if posix:
-        path = BAKET_POSIX_PATH
-    else:
-        path='/tmp/'
-    if tag == 'LNGS' or tag == 'LNF' or tag =='TMP':
-        f = open_mid(run, path=path,  cloud=posix,  tag=tag, verbose=False)
-    else:
-        f = open_root(run, path=path,  cloud=posix,  tag=tag, verbose=False)
-    return f
+
 
 def pic_(cfile, iTr=0, verbose=False):
     import ROOT
