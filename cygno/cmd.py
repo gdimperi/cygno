@@ -35,7 +35,6 @@ def append2file(line, filein):
 def cache_file(url, cachedir='/tmp/', verbose=False):
     import os
     import sys
-    import urllib
     from platform import python_version
     if not os.path.exists(cachedir):
         os.mkdir(cachedir)
@@ -43,8 +42,10 @@ def cache_file(url, cachedir='/tmp/', verbose=False):
     if not os.path.exists(tmpname):
         if verbose: print("downloading: "+tmpname)
         if python_version().split('.')[0]=='3':
-            urllib.request.urlretrieve(url, tmpname, reporthook)
+            from urllib.request import urlretrieve
+            urlretrieve(url, tmpname, reporthook)
         else:
+            import urllib
             urllib.urlretrieve(url, tmpname, reporthook)
     else:
         if verbose: sys.stderr.write('file '+tmpname+' cached')
