@@ -32,6 +32,20 @@ def append2file(line, filein):
     command = 'echo '+ line + ' >> '+filein
     return os.system(command)
 
+def reporthook(blocknum, blocksize, totalsize, verbose=True):
+    import sys
+    readsofar = blocknum * blocksize
+    if totalsize > 0:
+        percent = readsofar * 1e2 / totalsize
+        s = "\r%5.1f%% %*d / %d" % (
+            percent, len(str(totalsize)), readsofar, totalsize)
+        if verbose: sys.stderr.write(s)
+        if readsofar >= totalsize: # near the end
+            if verbose: sys.stderr.write("\n")
+    else: # total size is unknown
+        if verbose: sys.stderr.write("read %d\n" % (readsofar,))
+
+
 def cache_file(url, cachedir='/tmp/', verbose=False):
     import os
     import sys
@@ -42,10 +56,10 @@ def cache_file(url, cachedir='/tmp/', verbose=False):
     if not os.path.exists(tmpname):
         if verbose: print("downloading: "+tmpname)
         if python_version().split('.')[0]=='3':
-#             from urllib.request import urlretrieve
-#             urlretrieve(url, tmpname, reporthook)
-            import urllib
-            urllib.request.urlretrieve(url, tmpname, reporthook)
+            from urllib.request import urlretrieve
+            urlretrieve(url, tmpname, reporthook)
+#             import urllib
+#             urllib.request.urlretrieve(url, tmpname, reporthook)
         else:
             import urllib
             urllib.urlretrieve(url, tmpname, reporthook)
