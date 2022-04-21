@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 #
-# I. Abritta and G. Mazzitelli March 2022
-# Middelware online recostruction 
-# Modify by ... in date ...
+# G. Mazzitelli 2022
 #
+
+__version__ = '1.0'
+
+
 import midas.file_reader
 from datetime import datetime
 import numpy as np
