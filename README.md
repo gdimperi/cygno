@@ -41,6 +41,21 @@ or refresh the token
  
       eval `oidc-agent`
       oidc-gen --reauthenticate --flow device infncloud-iam (if you alrady have the token)
+      
+you can also add in your bush (or equivalent) profile
+
+	echo "CLOUD storage setup: infncloud-iam"
+	export REFRESH_TOKEN="xxx"
+	export IAM_CLIENT_SECRET="yyy"
+	export IAM_CLIENT_ID="zzz"
+	export IAM_SERVER=https://iam.cloud.infn.it/
+	unset OIDC_SOCK; unset OIDCD_PID; eval `oidc-keychain`
+	oidc-gen --client-id $IAM_CLIENT_ID --client-secret $IAM_CLIENT_SECRET --rt $REFRESH_TOKEN --manual --issuer $IAM_SERVER --pw-cmd="echo pwd" --redirect-uri="edu.kit.data.oidc-agent:/redirect http://localhost:34429 http://localhost:8080 http://localhost:4242" --scope "iam openid email profile offline_access" infncloud-iam
+	
+to get setup info, type:
+
+	oidc-gen -p infncloud-iam
+
 
 usage
 
