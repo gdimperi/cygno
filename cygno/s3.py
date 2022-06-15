@@ -162,7 +162,35 @@ def obj_get(filein, fileout, tag, bucket='cygno-sim', session="infncloud-iam", v
     except Exception as e:
         logging.error(e)
         return False
+    
+def obj_size(filein, tag, bucket='cygno-sim', session="infncloud-iam", verbose=False):
+    # https://boto3.amazonaws.com/v1/documentation/api/latest/guide/s3-uploading-files.html#uploading-files
+    import boto3
+    from boto3sts import credentials as creds
+    import logging
+    import botocore
+    import requests
+    import os
+    #
+    endpoint='https://minio.cloud.infn.it/'
+    version='s3v4'
+    #
+    if verbose: print(">> get", filein,"taged", tag, "on backet", bucket, "for session",  session, "\n")
+    aws_session = creds.assumed_session(session)
+    s3 = aws_session.client('s3', endpoint_url=endpoint, config=boto3.session.Config(signature_version=version),verify=True)
 
+    key = tag+'/'
+
+    
+    try:
+        response=s3.head_object(Bucket=bucket,Key=key+filein)
+        value, unit = kb2valueformat(response['ContentLength'])
+        if verbose: print("File of {:.2f} {:s} size".format(value, unit)) 
+        return int(response['ContentLength'])
+    except (botocore.exceptions.ConnectionError, requests.exceptions.ConnectionError):
+        if verbose: print("Connection error or failed")
+        return 0
+    
 def obj_rm(filename, tag, bucket='cygno-sim', session="infncloud-iam", verbose=False):
     # https://boto3.amazonaws.com/v1/documentation/api/latest/guide/s3-uploading-files.html#uploading-files
     import boto3
