@@ -187,8 +187,12 @@ def obj_size(filein, tag, bucket='cygno-sim', session="infncloud-iam", verbose=F
         value, unit = kb2valueformat(response['ContentLength'])
         if verbose: print("File of {:.2f} {:s} size".format(value, unit)) 
         return int(response['ContentLength'])
-    except (botocore.exceptions.ConnectionError, requests.exceptions.ConnectionError):
-        if verbose: print("Connection error or failed")
+    
+    except botocore.exceptions.ClientError as e:
+        if e.response['Error']['Code'] == "404":
+            if verbose: print("File not found")
+        else:
+            if verbose: print("S3 failure")
         return 0
     
 def obj_rm(filename, tag, bucket='cygno-sim', session="infncloud-iam", verbose=False):
