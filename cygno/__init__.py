@@ -326,7 +326,8 @@ def read_cygno_logbook(sql=True, verbose=False):
 def run_info_logbook(run, sql=True, verbose=False):
     dataInfo=read_cygno_logbook(sql=sql,verbose=verbose)
     if sql:
-        out = dataInfo[dataInfo['Run number']==run]
+        #out = dataInfo[dataInfo['Run number']==run]
+        out = dataInfo[dataInfo['run_number']==run]
     else:
         out =  dataInfo[dataInfo.File_Number==str(run)]
     if verbose: print(out.values)
