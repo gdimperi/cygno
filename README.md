@@ -111,8 +111,8 @@ example:
 	
 HTTP access
 	
-	http://lnf.infn.it/~mazzitel/php/cygno_sql_query.php?run=368 (sigle run query output)
-	http://lnf.infn.it/~mazzitel/php/cygno_sql_query.php?table=on (full data table)
+* sigle run query output: [http://lnf.infn.it/~mazzitel/php/cygno_sql_query.php?run=368]http://lnf.infn.it/~mazzitel/php/cygno_sql_query.php?run=368 
+* full data table: [http://lnf.infn.it/~mazzitel/php/cygno_sql_query.php?table=on]http://lnf.infn.it/~mazzitel/php/cygno_sql_query.php?table=on 
 	
 	
 ## CYGNO CLI Tool *cygno_his2root*
