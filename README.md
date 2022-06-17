@@ -128,7 +128,7 @@ convert HIS HoKaWo output file in CYGNO root histograms data files
 
 convert MIDAS output file in CYGNO root histograms data files. Required:
 
-	pip install 'https://github.com/CYGNUS-RD/middleware/blob/master/midas/midaslib.tar.gz?raw=true’
+	pip install 'https://github.com/CYGNUS-RD/middleware/blob/master/midas/midaslib.tar.gz?raw=true'
 
 tool:
 
