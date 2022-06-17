@@ -109,6 +109,8 @@ example:
 	cygno_runs 368 -j (new logbook json output)
 	cygno_runs -a (dump all the dadabase)
 	
+HTTP access
+	
 	http://lnf.infn.it/~mazzitel/php/cygno_sql_query.php?run=368 (sigle run query output)
 	http://lnf.infn.it/~mazzitel/php/cygno_sql_query.php?table=on (full data table)
 	
