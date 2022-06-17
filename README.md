@@ -94,7 +94,7 @@ Data are also shared in CYGNO CLOUD resources via the CYGNO application: https:/
       
 ## CYGNO CLI Tool *cygno_runs*
 
-tool to show runs infromation stored in the logbook
+tool to show SQL runs infromation stored in the logbook
 
 	Usage: cygno_runs        [-ajv] run number
 
@@ -111,8 +111,8 @@ example:
 	
 HTTP access
 	
-* sigle run query output: [http://lnf.infn.it/~mazzitel/php/cygno_sql_query.php?run=368]http://lnf.infn.it/~mazzitel/php/cygno_sql_query.php?run=368 
-* full data table: [http://lnf.infn.it/~mazzitel/php/cygno_sql_query.php?table=on]http://lnf.infn.it/~mazzitel/php/cygno_sql_query.php?table=on 
+* sigle run query output: http://lnf.infn.it/~mazzitel/php/cygno_sql_query.php?run=368 
+* full database table: http://lnf.infn.it/~mazzitel/php/cygno_sql_query.php?table=on 
 	
 	
 ## CYGNO CLI Tool *cygno_his2root*
