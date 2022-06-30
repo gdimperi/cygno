@@ -44,7 +44,7 @@ cygno default notebook is reachble at the address https://notebook.cygno.cloud.i
 * login with AAI credentials
 ![a](https://github.com/CYGNUS-RD/cygno/blob/main/img/login.png)
 ![b](https://github.com/CYGNUS-RD/cygno/blob/main/img/aai.png)
-* start your notebook choosing version and RAM needed. That RAM is the maximum your interactive job can exploit. if there are concurred interactive job form other users draining the ram you can have your job killed. so don't ask the maximum of RAM if you don't relay need, and use condor queue instead of interactive jobs. 
+* start your notebook choosing version and RAM needed. That RAM is the maximum your interactive job can exploit. if there are concurred interactive job form other users draining the ram you can have your job killed. so don't ask the maximum of RAM if you don't relay need, and use condor queue instead of interactive jobs: https://github.com/CYGNUS-RD/mycondor#cygno-condor-queue 
 ![c](https://github.com/CYGNUS-RD/cygno/blob/main/img/resorce.png)
 * run/edit your notebook Python/ROOT or script via the available buttons
 ![b](https://github.com/CYGNUS-RD/cygno/blob/main/img/buttos.png)
