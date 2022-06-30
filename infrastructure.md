@@ -38,3 +38,11 @@ the cloud-storage/ contan tree backet:
       (LUOGO di NASCITA: BRASILE)
 
 * up to now also a local username in INFN local sites computing resources is required (see prevous point)
+
+### Usage of the CYGNO notebook
+cygno default notebook is reachble at the address https://notebook.cygno.cloud.infn.it:8888/ 
+* login with AAI credentials
+* start your notebook choosing version and RAM needed. That RAM is the maximum your interactive job can exploit. if there are concurred interactive job form other users draining the ram you can have your job killed. so don't ask the maximum of RAM if you don't relay need, and use condor queue instead of interactive jobs. 
+* run/edit your notebook Python/ROOT or script via the available buttons
+* use private folder to develop and store your code
+* use path /jupyter-workspace/cloud-storage/ to access cygno data/repository (cygno-data is RO accessible only by DAQ, the other are RW)  
