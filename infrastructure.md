@@ -42,7 +42,11 @@ the cloud-storage/ contan tree backet:
 ### Usage of the CYGNO notebook
 cygno default notebook is reachble at the address https://notebook.cygno.cloud.infn.it:8888/ 
 * login with AAI credentials
+![a](https://github.com/CYGNUS-RD/cygno/blob/main/img/login.png)
+![b](https://github.com/CYGNUS-RD/cygno/blob/main/img/aai.png)
 * start your notebook choosing version and RAM needed. That RAM is the maximum your interactive job can exploit. if there are concurred interactive job form other users draining the ram you can have your job killed. so don't ask the maximum of RAM if you don't relay need, and use condor queue instead of interactive jobs. 
+![c](https://github.com/CYGNUS-RD/cygno/blob/main/img/resorce.png)
 * run/edit your notebook Python/ROOT or script via the available buttons
+![b](https://github.com/CYGNUS-RD/cygno/blob/main/img/buttos.png)
 * use private folder to develop and store your code
 * use path /jupyter-workspace/cloud-storage/ to access cygno data/repository (cygno-data is RO accessible only by DAQ, the other are RW)  
