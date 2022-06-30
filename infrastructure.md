@@ -49,4 +49,4 @@ cygno default notebook is reachble at the address https://notebook.cygno.cloud.i
 * run/edit your notebook Python/ROOT or script via the available buttons
 ![b](https://github.com/CYGNUS-RD/cygno/blob/main/img/buttos.png)
 * use private folder to develop and store your code
-* use path /jupyter-workspace/cloud-storage/ to access cygno data/repository (cygno-data is RO accessible only by DAQ, the other are RW)  
+* use path /jupyter-workspace/cloud-storage/ to access cygno data/repository (cygno-data is RO accessible only by DAQ, the other are RW) or: https://github.com/CYGNUS-RD/cygno/blob/main/infrastructure.md#cygno-cloud-storage 
