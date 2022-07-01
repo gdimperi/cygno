@@ -4,6 +4,7 @@
 * if you are not associeted/hosted/employed of INFN plese signup on: https://signup.app.infn.it/ (see note (1)) 
 * accept the security policy  https://userportal.app.infn.it/;
 * follow the traning on computing security;
+### Computing resources on INFN Cloud
 * to access CYGNO bach system, jupyter notebook and storage plese register as USER also on the INFN CLOUD https://guides.cloud.infn.it/docs/users-guides/en/latest/users_guides/getting_started.html
 * follow the howto: https://github.com/CYGNUS-RD/cygno/blob/main/infrastructure.md#usage-of-the-cygno-notebook
 
