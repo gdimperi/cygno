@@ -46,7 +46,7 @@ the cloud-storage/ contan tree backet:
 ### Usage of the CYGNO notebook
 CYGNO default notebook is reachable at the address https://notebook.cygno.cloud.infn.it:8888/; a test environment is also available at the address https://192.135.24.159:8888/ for expert users. The notebook is configured with:
 - ROOT 6.24/06
-- Python 2/3.6 
+- Python 2/3.6 ([PackageListV16](https://raw.githubusercontent.com/CYGNUS-RD/cygno/main/img/PackageListV16.txt))
 - Garfield 
 - GEANT 4.10.5
 - https://gitlab.cern.ch/RooUnfold
