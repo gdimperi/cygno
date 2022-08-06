@@ -44,13 +44,20 @@ the cloud-storage/ contan tree backet:
 * up to now also a local username in INFN local sites computing resources is required (see prevous point)
 
 ### Usage of the CYGNO notebook
-cygno default notebook is reachble at the address https://notebook.cygno.cloud.infn.it:8888/ 
-* login with AAI credentials
-![a](https://github.com/CYGNUS-RD/cygno/blob/main/img/login.png)
-![b](https://github.com/CYGNUS-RD/cygno/blob/main/img/aai.png)
+CYGNO default notebook is reachable at the address https://notebook.cygno.cloud.infn.it:8888/; a test environment is also available at the address https://192.135.24.159:8888/ for expert users. The notebook is configured with:
+- ROOT 6.24/06
+- Python 2/3.6 
+- Garfield 
+- GEANT 4.10.5
+- https://gitlab.cern.ch/RooUnfold
+- https://github.com/christopherpoole/CADMesh
+- notebook version >16: python 3.9.10, emacs
+* to access the resource login with AAI credentials (see above to be athorized) 
+<img src="https://github.com/CYGNUS-RD/cygno/blob/main/img/login.png" alt="login" style="width:400px;"/>
+<img src="https://github.com/CYGNUS-RD/cygno/blob/main/img/aai.png" alt="login" style="width:400px;"/>
 * start your notebook choosing version and RAM needed. That RAM is the maximum your interactive job can exploit. if there are concurred interactive job form other users draining the ram you can have your job killed. so don't ask the maximum of RAM if you don't relay need, and use condor queue instead of interactive jobs: https://github.com/CYGNUS-RD/mycondor#cygno-condor-queue 
-![c](https://github.com/CYGNUS-RD/cygno/blob/main/img/resorce.png)
+<img src="https://github.com/CYGNUS-RD/cygno/blob/main/img/resorce.png" alt="login" style="width:400px;"/>
 * run/edit your notebook Python/ROOT or script via the available buttons
-![b](https://github.com/CYGNUS-RD/cygno/blob/main/img/buttos.png)
+<img src="https://github.com/CYGNUS-RD/cygno/blob/main/img/buttos.png" alt="login" style="width:400px;"/>
 * use private folder to develop and store your code
 * use path /jupyter-workspace/cloud-storage/ to access cygno data/repository (cygno-data is RO accessible only by DAQ, the other are RW) or: https://github.com/CYGNUS-RD/cygno/blob/main/infrastructure.md#cygno-cloud-storage 
