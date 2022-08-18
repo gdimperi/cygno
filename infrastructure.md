@@ -2,20 +2,20 @@
 The CYGNO exepriment develop a facility based on the [INFN cloud](https://www.cloud.infn.it/) to host:
 - data experiment storage (S3 based - [https://minio.cloud.infn.it/](https://minio.cloud.infn.it/))
 - tape backup storage
-- notebook web interface with python and root kernles, b
-- bach resourses accesible via condor queues
-Moreover computing resources are available at LNF and LNGS (Cygno login and U-LITE nodes) 
+- notebook web interface with python and root kernles, bach resources
+- bach resources accesible via condor queues
 
-### Signup on computing ressources
+Moreover, computing resources are available at LNF and LNGS (Cygno login and U-LITE nodes) and two [DAQ server](https://drive.google.com/file/d/1kEzvfJK7WSXK2Y1vfEwRqcH9uSmoYsXl/view?usp=sharing) equipped with GPU
+
+### Signup on computing ressources (needed for all resources: CLOUD, LNGS, LNF)
 * if you are not associeted/hosted/employed of INFN plese signup on: https://signup.app.infn.it/ (see note (1)) 
 * accept the security policy  https://userportal.app.infn.it/;
 * follow the traning on computing security;
 
 ### Computing resources on INFN Cloud
-* to access CYGNO bach system, jupyter notebook and storage plese register as USER also on the INFN CLOUD https://guides.cloud.infn.it/docs/users-guides/en/latest/users_guides/getting_started.html
-* follow the howto: https://github.com/CYGNUS-RD/cygno/blob/main/infrastructure.md#usage-of-the-cygno-notebook
+* signup as **user** on [INFN CLOUD](https://guides.cloud.infn.it/docs/users-guides/en/latest/users_guides/getting_started.html), as responsable put everyware **Giovanni Mazzitelli**
+* follow the [howto](https://github.com/CYGNUS-RD/cygno/blob/main/infrastructure.md#usage-of-the-cygno-notebook) 
 
-as responsable put everyware **Giovanni Mazzitelli**: giovanni.mazzitelli@lnf.infn.it
 
 ### Computing resources and OPEN VPN @ LNF (test DAQ server, ecc)
 * send an email to: giovanni.mazzitelli@lnf.infn.it to be autorized
@@ -27,19 +27,22 @@ as responsable put everyware **Giovanni Mazzitelli**: giovanni.mazzitelli@lnf.in
 * if you need also local computing resesources **Cygno login and U-LITE nodes** (deprecated) plese specify in the mail.
 * when aproved install the profile install the profile https://www.lngs.infn.it/en/vpn
 
-DAQ at LNF and LNGS [server configuration](https://drive.google.com/file/d/1kEzvfJK7WSXK2Y1vfEwRqcH9uSmoYsXl/view?usp=sharing) 
+### DAQ and Middle Ware ###
+* Data are collected by DAQ at LNF and LNGS [server configuration](https://drive.google.com/file/d/1kEzvfJK7WSXK2Y1vfEwRqcH9uSmoYsXl/view?usp=sharing) 
+* Exeperiment data are monitored by the quasi-online recostracion by the [Middle Ware](https://github.com/CYGNUS-RD/middleware)
+
 ### CYGNO CLOUD Storage
-you can upload/dowdload and mange data on the CYGNO cloud repositoty by: 
+Data collected are automatically pushed by DAQ on INFN S3 cloud storage. The storage data can be mange via: 
 
 * Web Tool: https://minio.cloud.infn.it/minio/login
-* Cloud CYGNO interface tool: https://notebook.cygno.cloud.infn.it:8888/ 
+* Cloud CYGNO web interface tool: https://notebook.cygno.cloud.infn.it:8888/ 
 * CLI tool: https://github.com/CYGNUS-RD/cygno#cygno-cli-tool-cygno_repo
 
-the cloud-storage/ contan tree backet:
+the cloud-storage/ contain tree backet:
 * cloud-data: daq stored data, read only
 * cloud-sim: simulation input and output data, read and write
-* cloud-analysis: analisys input and output data, read and write
-* (cygno - olda data repository, USERNAME private repository on cloud, scratch repository on cloud)
+* cloud-analysis: analysis input and output data, read and write
+* (cygno - old data repository, USERNAME private repository on cloud, scratch repository on cloud)
 
 *(1) for foreign users 
 * to be reggistred on AAI you need a CODICE FISCALE (CF) that you can generate with the tool:
