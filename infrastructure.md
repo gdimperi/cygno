@@ -20,7 +20,7 @@ Moreover, computing resources are available at LNF and LNGS (Cygno login and U-L
 
 ### Computing resources on INFN Cloud
 * signup as **user** on [INFN CLOUD](https://guides.cloud.infn.it/docs/users-guides/en/latest/users_guides/getting_started.html), as responsable put everyware **Giovanni Mazzitelli**
-* when approved follow the [HOWTO]([https://github.com/CYGNUS-RD/cygno/blob/main/infrastructure.md#usage-of-the-cygno-notebook](https://github.com/CYGNUS-RD/cygno/blob/main/infrastructure.md#usage-of-the-cygno-notebook-web-interface-and-cloud-services)) to exploit the resources
+* when approved follow the [HOWTO](https://github.com/CYGNUS-RD/cygno/blob/main/infrastructure.md#usage-of-the-cygno-notebook-web-interface-and-cloud-services) to exploit the resources
 
 
 ### Computing resources and OPEN VPN @ LNF (test DAQ server, ecc)
@@ -53,16 +53,22 @@ the cloud-storage/ contain tree backet:
 
 
 ### Usage of the CYGNO notebook web interface and Cloud services
+Two VM offer acces to cloud infrastrucure via web services based on jupyter notebook interface
+* production: CYGNO default notebook https://notebook.cygno.cloud.infn.it:8888/ ([16 CPU](https://novabench.com/parts/cpu/intel-core-broadwell-ibrs)/32 GB)
+* test environment https://192.135.24.159:8888/ ([4 CPU](https://novabench.com/parts/cpu/intel-core-broadwell-ibrs)/16 GB)
+* the web inteface offer the possibility to run a specific software configuration. In general:
+  * tag [dodas](https://github.com/DODAS-TS/dodas-docker-images) realises are the official one and approved by INFN
+  * tag [gmazzitelli](https://github.com/gmazzitelli/dodas-docker-images) are realisesed fork of official project under [development](https://github.com/gmazzitelli/cloud_docker_dev) and test
 
-CYGNO default notebook is reachable at the address https://notebook.cygno.cloud.infn.it:8888/; a test environment is also available at the address https://192.135.24.159:8888/ for expert users. The notebook is configured with:
-- ROOT 6.24/06
-- Python 2/3.6 ([Default package list notebook >= 16](https://raw.githubusercontent.com/CYGNUS-RD/cygno/main/img/PackageListV16.txt))
-- Garfield 
-- GEANT 4.10.5
-- https://gitlab.cern.ch/RooUnfold
-- https://github.com/christopherpoole/CADMesh
-- notebook version >16: python 3.9.10, emacs
-- CONDOR queues are recheble by the notebook terminal or via any computer by means of dedicated container ([https://github.com/CYGNUS-RD/mycondor])
+* The notebook is configured with:
+  - ROOT 6.24/06
+  - Python 2/3.6 ([Default package list notebook >= 16](https://raw.githubusercontent.com/CYGNUS-RD/cygno/main/img/PackageListV16.txt))
+  - Garfield 
+  - GEANT 4.10.5
+  - https://gitlab.cern.ch/RooUnfold
+  - https://github.com/christopherpoole/CADMesh
+  - notebook version >16: python 3.9.10, emacs
+  - CONDOR queues are recheble by the notebook terminal or via any computer by means of dedicated container ([https://github.com/CYGNUS-RD/mycondor])
 * to access the resource login with AAI credentials (see above to be athorized) 
 <img src="https://github.com/CYGNUS-RD/cygno/blob/main/img/login.png" alt="login" style="width:400px;"/>
 <img src="https://github.com/CYGNUS-RD/cygno/blob/main/img/aai.png" alt="login" style="width:400px;"/>
