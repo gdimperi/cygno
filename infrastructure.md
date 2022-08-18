@@ -1,26 +1,33 @@
 # Computing infrastrcture
+The CYGNO exepriment develop a facility based on the [INFN cloud](https://www.cloud.infn.it/) to host:
+- data experiment storage (S3 based - [https://minio.cloud.infn.it/](https://minio.cloud.infn.it/))
+- tape backup storage
+- notebook web interface with python and root kernles, b
+- bach resourses accesible via condor queues
+Moreover computing resources are available at LNF and LNGS (Cygno login and U-LITE nodes) 
 
 ### Signup on computing ressources
 * if you are not associeted/hosted/employed of INFN plese signup on: https://signup.app.infn.it/ (see note (1)) 
 * accept the security policy  https://userportal.app.infn.it/;
 * follow the traning on computing security;
+
 ### Computing resources on INFN Cloud
 * to access CYGNO bach system, jupyter notebook and storage plese register as USER also on the INFN CLOUD https://guides.cloud.infn.it/docs/users-guides/en/latest/users_guides/getting_started.html
 * follow the howto: https://github.com/CYGNUS-RD/cygno/blob/main/infrastructure.md#usage-of-the-cygno-notebook
 
 as responsable put everyware **Giovanni Mazzitelli**: giovanni.mazzitelli@lnf.infn.it
 
-### Computing resources and OPEN VPN @ LNF
-if you need to access LNF LAN via OpenVPN install the infn-user profile
+### Computing resources and OPEN VPN @ LNF (test DAQ server, ecc)
 * send an email to: giovanni.mazzitelli@lnf.infn.it to be autorized
-* http://www.lnf.infn.it/computing/networking/openvpn-en.php
+* when aproved install the profile http://www.lnf.infn.it/computing/networking/openvpn-en.php
 * if you need also local computing resesources plese fill http://www.lnf.infn.it/computing/cgi-bin/newaccountrequest.pl 
 
-### Computing resources and OPEN VPN @ LNGS
+### Computing resources and OPEN VPN @ LNGS (DAQ, shift, ecc)
 * send an email to: giovanni.mazzitelli@lnf.infn.it to be autorized
-* install the profile https://www.lngs.infn.it/en/vpn
-* if you need also local computing resesources plese ask for it by mail to giovanni.mazzitelli@lnf.infn.it
+* if you need also local computing resesources **Cygno login and U-LITE nodes** (deprecated) plese specify in the mail.
+* when aproved install the profile install the profile https://www.lngs.infn.it/en/vpn
 
+DAQ at LNF and LNGS [server configuration](https://drive.google.com/file/d/1kEzvfJK7WSXK2Y1vfEwRqcH9uSmoYsXl/view?usp=sharing) 
 ### CYGNO CLOUD Storage
 you can upload/dowdload and mange data on the CYGNO cloud repositoty by: 
 
@@ -43,7 +50,8 @@ the cloud-storage/ contan tree backet:
 
 * up to now also a local username in INFN local sites computing resources is required (see prevous point)
 
-### Usage of the CYGNO notebook
+### Usage of the CYGNO notebook web interface
+
 CYGNO default notebook is reachable at the address https://notebook.cygno.cloud.infn.it:8888/; a test environment is also available at the address https://192.135.24.159:8888/ for expert users. The notebook is configured with:
 - ROOT 6.24/06
 - Python 2/3.6 ([Default package list notebook >= 16](https://raw.githubusercontent.com/CYGNUS-RD/cygno/main/img/PackageListV16.txt))
