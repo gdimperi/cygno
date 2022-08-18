@@ -81,9 +81,9 @@ Two VM offer acces to cloud infrastrucure via web services based on jupyter note
 <img src="https://github.com/CYGNUS-RD/cygno/blob/main/img/buttos.png" alt="login" style="width:400px;"/>
 
 * the file system is availbale at the dafult path /jupyter-workspace that is divided in:
-  * /jupyter-workspace/cloud-storage POSIX simulated access to S3 CYGNO storage system (experiment data, simulationa and analysis repository)
-  * /jupyter-workspace/private working directory; this access to a local file system in case of cloud fault data can be lost (from v17 this foleder is atomaticaly backuped in /jupyter-workspace/cloud-storage/USERNAME/private, safe and always reachbele by [MINIO](https://minio.cloud.infn.it/))
-  * /jupyter-workspace/shared shared working directory
-  * under /jupyter-workspace/cloud-storage ara also available a USERNAME directory (accessible only by user) and a screach area (accesible by anybody). Those directory are on S3 and permanent.
-* it's strogly sujest to develop and run you code from /jupyter-workspace/private use private folder to develop and store your code
+  * **/jupyter-workspace/cloud-storage** POSIX simulated access to S3 CYGNO storage system (experiment data, simulationa and analysis repository)
+  * **/jupyter-workspace/private** working directory; this access to a local file system in case of cloud fault data can be lost (from v17 this foleder is atomaticaly backuped in /jupyter-workspace/cloud-storage/USERNAME/private, safe and always reachbele by [MINIO](https://minio.cloud.infn.it/))
+  * **/jupyter-workspace/shared** shared working directory
+  * under **/jupyter-workspace/cloud-storage** ara also available a *USERNAME* directory (accessible only by user) and a *screach* area (accesible by anybody). Those directory are on S3 and permanent.
+* it's strogly sujest to develop and run you code from **/jupyter-workspace/private** use private folder to develop and store your code
 * use path /jupyter-workspace/cloud-storage/ to access cygno data/repository (cygno-data is RO accessible only by DAQ, the other are RW) or: https://github.com/CYGNUS-RD/cygno/blob/main/infrastructure.md#cygno-cloud-storage 
