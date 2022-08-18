@@ -1,6 +1,6 @@
 # Computing infrastrcture
 The CYGNO exepriment develop a facility based on the [INFN cloud](https://www.cloud.infn.it/) to host:
-- data experiment storage (S3 based - [https://minio.cloud.infn.it/](https://minio.cloud.infn.it/))
+- data experiment storage ([S3 based](https://it.wikipedia.org/wiki/Amazon_S3) - [https://minio.cloud.infn.it/](https://minio.cloud.infn.it/))
 - tape backup storage
 - notebook web interface with python and root kernles, bach resources
 - bach resources accesible via condor queues
@@ -38,7 +38,7 @@ Moreover, computing resources are available at LNF and LNGS (Cygno VM login and 
 * Exeperiment data are monitored by the quasi-online recostracion by the [Middle Ware](https://github.com/CYGNUS-RD/middleware)
 
 ### CYGNO CLOUD Storage
-Data collected by the experiment DAQ are automatically pushed on INFN S3 cloud storage. The storage data and the experiment area for analysis and simulation can be acces and manage via: 
+Data collected by the experiment DAQ are automatically pushed on INFN [S3 cloud](https://it.wikipedia.org/wiki/Amazon_S3) storage. The storage data and the experiment area for analysis and simulation can be acces and manage via: 
 
 * Web Tool: https://minio.cloud.infn.it/minio/login
 * Cloud CYGNO web interface tool: https://notebook.cygno.cloud.infn.it:8888/ 
@@ -84,7 +84,7 @@ Two VM offer acces to cloud infrastrucure via web services based on jupyter note
   * **/jupyter-workspace/cloud-storage/**: POSIX simulated access to S3 CYGNO storage system (experiment data, simulation and analysis repository, see also [CYGNO cloud storage](https://github.com/CYGNUS-RD/cygno/blob/main/infrastructure.md#cygno-cloud-storage)) 
   * under **/jupyter-workspace/cloud-storage/**: is also available a *USERNAME* directory (accessible only by user) and a *screach* area (accesible by anybody). Those directories are on S3 and permanent.
   * **/jupyter-workspace/private/**: working directory; this access to a local file system in case of cloud fault data can be lost (from v17 this foleder is atomaticaly backuped in **/jupyter-workspace/cloud-storage/USERNAME/private**, safe and always reachbele by [MINIO](https://minio.cloud.infn.it/))
-  * **/jupyter-workspace/shared/**: shared working directory
+  * **/jupyter-workspace/shared/**: shared working directory on lacal system
 
 * it's strogly sujest to develop and run you code from **/jupyter-workspace/private** use private folder to develop and store your code
 * all paths to exploit installed softwares, and condor queues since realese v17, are configured by dafault. A personal setup can be configured editing the file **/jupyter-workspace/cloud-storage/USERNAME/.bashrc** (example git personal config)
