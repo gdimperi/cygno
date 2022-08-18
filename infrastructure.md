@@ -5,7 +5,7 @@ The CYGNO exepriment develop a facility based on the [INFN cloud](https://www.cl
 - notebook web interface with python and root kernles, bach resources
 - bach resources accesible via condor queues
 
-Moreover, computing resources are available at LNF and LNGS (Cygno login and U-LITE nodes) and two [DAQ server](https://drive.google.com/file/d/1kEzvfJK7WSXK2Y1vfEwRqcH9uSmoYsXl/view?usp=sharing) equipped with GPU
+Moreover, computing resources are available at LNF and LNGS (Cygno VM login and U-LITE nodes) and two [DAQ server](https://drive.google.com/file/d/1kEzvfJK7WSXK2Y1vfEwRqcH9uSmoYsXl/view?usp=sharing) equipped with GPU
 
 ### Signup on computing ressources (needed for all resources: CLOUD, LNGS, LNF)
 * if you are not associeted/hosted/employed of INFN plese signup on: https://signup.app.infn.it/ (tips for foreign users see below)
@@ -30,7 +30,7 @@ Moreover, computing resources are available at LNF and LNGS (Cygno login and U-L
 
 ### Computing resources and OPEN VPN @ LNGS (DAQ, shift, ecc)
 * send an email to: giovanni.mazzitelli@lnf.infn.it to be autorized
-* if you need also local computing resesources **Cygno login and U-LITE nodes** (deprecated) plese specify in the mail.
+* if you need also local computing resesources **Cygno VM login and U-LITE nodes** (deprecated) plese specify in the mail.
 * when aproved install the profile install the profile https://www.lngs.infn.it/en/vpn
 
 ### DAQ and Middle Ware ###
