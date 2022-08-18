@@ -11,6 +11,12 @@ Moreover, computing resources are available at LNF and LNGS (Cygno login and U-L
 * if you are not associeted/hosted/employed of INFN plese signup on: https://signup.app.infn.it/ (see note (1)) 
 * accept the security policy  https://userportal.app.infn.it/;
 * follow the traning on computing security;
+* for foreign users to be reggistred on AAI you need a CODICE FISCALE (CF) that you can generate with the tool https://quifinanza.it/strumenti/codice-fiscale 
+```
+      (Provincia: “Stato Estero")
+      (LUOGO di NASCITA: BRASILE)
+```
+* up to now also a local username in INFN local sites computing resources is required (see following point)
 
 ### Computing resources on INFN Cloud
 * signup as **user** on [INFN CLOUD](https://guides.cloud.infn.it/docs/users-guides/en/latest/users_guides/getting_started.html), as responsable put everyware **Giovanni Mazzitelli**
@@ -44,14 +50,7 @@ the cloud-storage/ contain tree backet:
 * cloud-analysis: analysis input and output data, read and write
 * (cygno - old data repository, USERNAME private repository on cloud, scratch repository on cloud)
 
-*(1) for foreign users 
-* to be reggistred on AAI you need a CODICE FISCALE (CF) that you can generate with the tool:
 
-      https://quifinanza.it/strumenti/codice-fiscale 
-      (Provincia: “Stato Estero")
-      (LUOGO di NASCITA: BRASILE)
-
-* up to now also a local username in INFN local sites computing resources is required (see prevous point)
 
 ### Usage of the CYGNO notebook web interface
 
