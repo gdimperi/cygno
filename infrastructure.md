@@ -86,4 +86,4 @@ Two VM offer acces to cloud infrastrucure via web services based on jupyter note
   * **/jupyter-workspace/shared** shared working directory
   * under **/jupyter-workspace/cloud-storage** ara also available a *USERNAME* directory (accessible only by user) and a *screach* area (accesible by anybody). Those directory are on S3 and permanent.
 * it's strogly sujest to develop and run you code from **/jupyter-workspace/private** use private folder to develop and store your code
-* all paths to exploit installed softwares, and condor queues since realese v17, are configured by dafault, personal setup can be configured editing the file **/jupyter-workspace/cloud-storage/USERNAME/.bashrc** (example git personal config)
+* all paths to exploit installed softwares, and condor queues since realese v17, are configured by dafault. A personal setup can be configured editing the file **/jupyter-workspace/cloud-storage/USERNAME/.bashrc** (example git personal config)
