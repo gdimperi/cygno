@@ -20,7 +20,7 @@ Moreover, computing resources are available at LNF and LNGS (Cygno login and U-L
 
 ### Computing resources on INFN Cloud
 * signup as **user** on [INFN CLOUD](https://guides.cloud.infn.it/docs/users-guides/en/latest/users_guides/getting_started.html), as responsable put everyware **Giovanni Mazzitelli**
-* when approved follow the [howto](https://github.com/CYGNUS-RD/cygno/blob/main/infrastructure.md#usage-of-the-cygno-notebook) to exploit the resources
+* when approved follow the [HOWTO]([https://github.com/CYGNUS-RD/cygno/blob/main/infrastructure.md#usage-of-the-cygno-notebook](https://github.com/CYGNUS-RD/cygno/blob/main/infrastructure.md#usage-of-the-cygno-notebook-web-interface-and-cloud-services)) to exploit the resources
 
 
 ### Computing resources and OPEN VPN @ LNF (test DAQ server, ecc)
