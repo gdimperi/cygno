@@ -68,13 +68,22 @@ Two VM offer acces to cloud infrastrucure via web services based on jupyter note
   - https://gitlab.cern.ch/RooUnfold
   - https://github.com/christopherpoole/CADMesh
   - notebook version >16: python 3.9.10, emacs
-  - CONDOR queues are recheble by the notebook terminal or via any computer by means of dedicated container ([https://github.com/CYGNUS-RD/mycondor])
+  - access to CYGNO cluster queues, via condor, via the notebook terminal or via any computer by means of [dedicated container](https://github.com/CYGNUS-RD/mycondor)
 * to access the resource login with AAI credentials (see above to be athorized) 
 <img src="https://github.com/CYGNUS-RD/cygno/blob/main/img/login.png" alt="login" style="width:400px;"/>
 <img src="https://github.com/CYGNUS-RD/cygno/blob/main/img/aai.png" alt="login" style="width:400px;"/>
+
 * start your notebook choosing version and RAM needed. That RAM is the maximum your interactive job can exploit. if there are concurred interactive job form other users draining the ram you can have your job killed. so don't ask the maximum of RAM if you don't relay need, and use condor queue instead of interactive jobs: https://github.com/CYGNUS-RD/mycondor#cygno-condor-queue 
+
 <img src="https://github.com/CYGNUS-RD/cygno/blob/main/img/resorce.png" alt="login" style="width:400px;"/>
+
 * run/edit your notebook Python/ROOT or script via the available buttons
 <img src="https://github.com/CYGNUS-RD/cygno/blob/main/img/buttos.png" alt="login" style="width:400px;"/>
-* use private folder to develop and store your code
+
+* the file system is availbale at the dafult path /jupyter-workspace that is divided in:
+  * /jupyter-workspace/cloud-storage POSIX simulated access to S3 CYGNO storage system (experiment data, simulationa and analysis repository)
+  * /jupyter-workspace/private working directory; this access to a local file system in case of cloud fault data can be lost (from v17 this foleder is atomaticaly backuped in /jupyter-workspace/cloud-storage/USERNAME/private, safe and always reachbele by [MINIO](https://minio.cloud.infn.it/))
+  * /jupyter-workspace/shared shared working directory
+  * under /jupyter-workspace/cloud-storage ara also available a USERNAME directory (accessible only by user) and a screach area (accesible by anybody). Those directory are on S3 and permanent.
+* it's strogly sujest to develop and run you code from /jupyter-workspace/private use private folder to develop and store your code
 * use path /jupyter-workspace/cloud-storage/ to access cygno data/repository (cygno-data is RO accessible only by DAQ, the other are RW) or: https://github.com/CYGNUS-RD/cygno/blob/main/infrastructure.md#cygno-cloud-storage 
