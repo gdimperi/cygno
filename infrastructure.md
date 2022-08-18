@@ -8,19 +8,19 @@ The CYGNO exepriment develop a facility based on the [INFN cloud](https://www.cl
 Moreover, computing resources are available at LNF and LNGS (Cygno login and U-LITE nodes) and two [DAQ server](https://drive.google.com/file/d/1kEzvfJK7WSXK2Y1vfEwRqcH9uSmoYsXl/view?usp=sharing) equipped with GPU
 
 ### Signup on computing ressources (needed for all resources: CLOUD, LNGS, LNF)
-* if you are not associeted/hosted/employed of INFN plese signup on: https://signup.app.infn.it/ (see note (1)) 
+* if you are not associeted/hosted/employed of INFN plese signup on: https://signup.app.infn.it/ (tips for foreign users see below)
 * accept the security policy  https://userportal.app.infn.it/;
 * follow the traning on computing security;
-* for foreign users to be reggistred on AAI you need a CODICE FISCALE (CF) that you can generate with the tool https://quifinanza.it/strumenti/codice-fiscale 
-```
+  * for foreign users to be reggistred on AAI you need a CODICE FISCALE (CF) that you can generate with the tool https://quifinanza.it/strumenti/codice-fiscale 
+  ```
       (Provincia: “Stato Estero")
       (LUOGO di NASCITA: BRASILE)
-```
-* up to now also a local username in INFN local sites computing resources is required (see following point)
+  ```
+  * up to now also a local username in INFN local sites computing resources is required (see following point)
 
 ### Computing resources on INFN Cloud
 * signup as **user** on [INFN CLOUD](https://guides.cloud.infn.it/docs/users-guides/en/latest/users_guides/getting_started.html), as responsable put everyware **Giovanni Mazzitelli**
-* follow the [howto](https://github.com/CYGNUS-RD/cygno/blob/main/infrastructure.md#usage-of-the-cygno-notebook) 
+* when approved follow the [howto](https://github.com/CYGNUS-RD/cygno/blob/main/infrastructure.md#usage-of-the-cygno-notebook) to exploit the resources
 
 
 ### Computing resources and OPEN VPN @ LNF (test DAQ server, ecc)
@@ -38,7 +38,7 @@ Moreover, computing resources are available at LNF and LNGS (Cygno login and U-L
 * Exeperiment data are monitored by the quasi-online recostracion by the [Middle Ware](https://github.com/CYGNUS-RD/middleware)
 
 ### CYGNO CLOUD Storage
-Data collected are automatically pushed by DAQ on INFN S3 cloud storage. The storage data can be mange via: 
+Data collected by the experiment DAQ are automatically pushed on INFN S3 cloud storage. The storage data and the experiment area for analysis and simulation can be acces and manage via: 
 
 * Web Tool: https://minio.cloud.infn.it/minio/login
 * Cloud CYGNO web interface tool: https://notebook.cygno.cloud.infn.it:8888/ 
@@ -52,7 +52,7 @@ the cloud-storage/ contain tree backet:
 
 
 
-### Usage of the CYGNO notebook web interface
+### Usage of the CYGNO notebook web interface and Cloud services
 
 CYGNO default notebook is reachable at the address https://notebook.cygno.cloud.infn.it:8888/; a test environment is also available at the address https://192.135.24.159:8888/ for expert users. The notebook is configured with:
 - ROOT 6.24/06
