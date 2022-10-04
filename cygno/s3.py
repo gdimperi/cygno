@@ -57,7 +57,8 @@ def mid_file(run, tag='LNGS', cloud=False, verbose=False):
 
 def backet_list(tag, bucket='cygno-sim', session="infncloud-iam", verbose=False):
     import boto3
-    from boto3sts import credentials as creds
+    # from boto3sts import credentials as creds
+    from mypy-boto3-sts import credentials as creds
 
     endpoint='https://minio.cloud.infn.it/'
     version='s3v4'
