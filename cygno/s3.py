@@ -57,8 +57,8 @@ def mid_file(run, tag='LNGS', cloud=False, verbose=False):
 
 def backet_list(tag, bucket='cygno-sim', session="infncloud-iam", verbose=False):
     import boto3
-    # from boto3sts import credentials as creds
-    from mypy_boto3_sts import credentials as creds
+    from boto3sts import credentials as creds
+    # from mypy_boto3_sts import credentials as creds
 
     endpoint='https://minio.cloud.infn.it/'
     version='s3v4'
@@ -84,8 +84,8 @@ def backet_list(tag, bucket='cygno-sim', session="infncloud-iam", verbose=False)
 def obj_put(filename, tag, bucket='cygno-sim', session="infncloud-iam", verbose=False):
     # https://boto3.amazonaws.com/v1/documentation/api/latest/guide/s3-uploading-files.html#uploading-files
     import boto3
-    # from boto3sts import credentials as creds
-    from mypy_boto3_sts import credentials as creds
+    from boto3sts import credentials as creds
+    # from mypy_boto3_sts import credentials as creds
     import logging
     import botocore
     import requests

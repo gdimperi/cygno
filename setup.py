@@ -26,8 +26,8 @@ setup(
     'matplotlib',
     'boto3',
     'botocore',
-    'mypy-boto3-sts',
-#    'boto3sts',
+#    'mypy-boto3-sts',
+    'boto3sts',
 #    'root_numpy',
     'tqdm'
    ]
