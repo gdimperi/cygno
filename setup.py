@@ -31,6 +31,6 @@ setup(
     'tqdm'
     ],
     dependency_links=[
-        'https://github.com/DODAS-TS/boto3sts.git#egg=boto3sts_alt-0.0.8'  # Link with version at the end
+        'git+https://github.com/DODAS-TS/boto3sts.git#egg=boto3sts_alt-0.0.8'  # Link with version at the end
     ]
 )
