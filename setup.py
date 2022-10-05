@@ -30,5 +30,8 @@ setup(
     'boto3sts',
 #    'root_numpy',
     'tqdm'
+   ],
+    dependency_links=[
+        'https://github.com/DODAS-TS/boto3sts',
    ]
 )
