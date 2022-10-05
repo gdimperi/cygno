@@ -26,8 +26,11 @@ setup(
     'matplotlib',
     'boto3',
     'botocore',
-    'boto3sts @ https://github.com/DODAS-TS/boto3sts',
+    'boto3sts @ https://github.com/DODAS-TS/boto3sts.git',
 #    'root_numpy',
     'tqdm'
-   ]
+    ],
+#    dependency_links=[
+#        'https://github.com/DODAS-TS/boto3sts.git#egg=boto3sts'  # Link with version at the end
+#    ]
 )
