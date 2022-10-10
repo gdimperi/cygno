@@ -67,7 +67,7 @@ Two VM offer acces to cloud infrastrucure via web services based on jupyter note
   - GEANT 4.10.5
   - https://gitlab.cern.ch/RooUnfold
   - https://github.com/christopherpoole/CADMesh
-  - notebook version >16: python 3.9.10, emacs
+  - notebook version >16: python 3.9.10, emacs, screen
   - access to CYGNO cluster (~ 50 cores), condor queues, via the notebook terminal or via any computer by means of [dedicated container](https://github.com/CYGNUS-RD/mycondor)
 * to access the resource login with AAI credentials (see above to be athorized) 
 <img src="https://github.com/CYGNUS-RD/cygno/blob/main/img/login.png" alt="login" style="width:400px;"/>
